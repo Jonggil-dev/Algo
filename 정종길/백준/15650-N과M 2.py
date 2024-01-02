@@ -8,6 +8,5 @@ def dfs(start, N, M, sequence):
             dfs(i + 1, N, M, sequence + [i])
 
 
-
 N, M = map(int, input().split())
 dfs(1, N, M, [])
