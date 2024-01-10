@@ -33,7 +33,7 @@ def solution(rows, columns, queries):
             # print(now)
             MIN = min(now, MIN)
         # 왼쪽 아래 꼭짓점에서 위로
-        for nx in range(x2-1, x1, -1):
+        for nx in range(x2-1, x1-1, -1):
             # print('d', nx, y1)
             next = init[nx][y1]
             init[nx][y1] = now
