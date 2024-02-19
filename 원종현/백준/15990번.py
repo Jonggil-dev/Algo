@@ -1,16 +1,32 @@
+from collections import deque
 import sys
 input=sys.stdin.readline
-dp=[[0]*4 for _ in range(100001)]
-dp[1][1]=1
-dp[2][2]=1
-dp[3][1]=1
-dp[3][2]=1
-dp[3][3]=1
-V=1000000009
-for i in range(4,100001):
-    dp[i][1]=(dp[i-1][2]+dp[i-1][3])%V
-    dp[i][2]=(dp[i-2][1]+dp[i-2][3])%V
-    dp[i][3]=(dp[i-3][1]+dp[i-3][2])%V
-for i in  range(int(input())):
-    N=int(input())
-    print(sum(dp[N])%V)
+N=int(input())
+M=int(input())
+conn=[[] for _ in range(N+1)]
+basic=[[0]*(N+1) for _ in range(N+1)]
+deg=[0]*(N+1)
+for i in range(M):
+    X,Y,K=map(int,input().split())
+    conn[Y].append((X,K))
+    deg[X]+=1
+
+q=deque()
+for i in range(1,N+1):
+    if deg[i]==0:
+        q.append(i)
+
+while q:
+    now=q.popleft()
+    for next,next_basic in conn[now]:
+        if basic[now].count(0)==N+1:
+            basic[next][now]+=next_basic
+        else:
+            for i in range(1,N+1):
+                basic[next][i]+=basic[now][i]*next_basic
+        deg[next]-=1
+        if deg[next]==0:
+            q.append(next)
+for x in enumerate(basic[N]):
+    if x[1]>0:
+        print(*x)
