@@ -3,10 +3,8 @@ import java.util.*;
 import java.math.*;
 
 public class Main {
-
     public void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-     
         Map<BigInteger,Integer> dic = new HashMap<>();
         int N=Integer.parseInt(br.readLine());
         BigInteger res = new BigInteger("-1");
