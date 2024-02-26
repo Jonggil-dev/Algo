@@ -1,0 +1,22 @@
+def solution(s):
+    answer = 0
+    now = 0
+    while True:
+        x, y = 0, 0
+        first = s[now]
+        x += 1
+        now += 1
+        for i in s[now:]:
+            now += 1
+            if i == first:
+                x += 1
+            else:
+                y += 1
+            if x == y:
+                answer += 1
+                break
+        if now >= len(s):
+            if x != y:
+                answer += 1
+            break
+    return answer
