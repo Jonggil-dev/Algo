@@ -15,16 +15,26 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "for_java.Main",
-            "projectName": "Algo_c7eb0ae5",
-            "args":["<", "for_java/input.txt", ">", "for_java/output.txt"],
+            "projectName": "",
+            "args": [
+                "<",
+                "for_java/input.txt",
+                ">",
+                "for_java/output.txt"
+            ]
         },
         {
             "type": "java",
             "name": "Solution",
             "request": "launch",
             "mainClass": "for_java.Solution",
-            "projectName": "Algo_c7eb0ae5",
-            "args":["<", "for_java/input.txt", ">", "for_java/output.txt"],
+            "projectName": "",
+            "args": [
+                "<",
+                "for_java/input.txt",
+                ">",
+                "for_java/output.txt"
+            ]
         }
     ]
 }
