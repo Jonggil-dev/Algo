@@ -1,0 +1,14 @@
+def solution(n):
+    def fac(x):
+        a = 1
+        for i in range(1, x+1):
+            a *= i
+        return a
+    answer = 1
+    cnt = n // 2 + 1
+    for i in range(1, cnt):
+        tmp = n - (2*i)
+        num = fac(tmp+i) // (fac(i) * fac(tmp))
+        answer += num
+    return answer % 1234567
+
