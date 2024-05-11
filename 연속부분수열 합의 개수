@@ -1,0 +1,17 @@
+def solution(elements):
+    answer = 0
+    n = len(elements)
+    elements = elements+elements
+    sum_elements = [0] * (2*n + 1)
+    for i in range(1, 2*n+1):
+        sum_elements[i] = sum_elements[i-1] + elements[i-1]
+    
+    res_set = set()
+    for i in range(n):
+        for j in range(n):
+            start = j
+            end = i+j
+            tmp = sum_elements[end] - sum_elements[start]
+            res_set.add(tmp)
+    answer = len(res_set)
+    return answer
