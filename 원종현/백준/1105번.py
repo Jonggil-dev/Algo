@@ -7,6 +7,6 @@ else:
         if a[i]==b[i]:
             if a[i]=='8':
                 res+=1
-            else:
-                break
+        else:
+            break
     print(res)
