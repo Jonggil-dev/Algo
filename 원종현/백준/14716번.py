@@ -1,6 +1,7 @@
 import sys
 sys.setrecursionlimit(10**8)
 
+
 def dfs(y, x):
     graph[y][x] = 0
     for dy, dx in d:
