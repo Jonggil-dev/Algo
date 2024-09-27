@@ -2,7 +2,7 @@ import sys,heapq
 input=sys.stdin.readline
 
 N=int(input())
-tmp=''.join(list(map(str, input().split())))
+tmp=''.join(list(map(lambda x:str(int(x)-1), input().split())))
 res=''.join(sorted(tmp))
 M=int(input())
 mo=[]
@@ -10,7 +10,7 @@ for i in range(M):
     mo.append(list(map(int,input().split())))
 
 dic={}
-dic[tmp]=1
+dic[tmp]=0
 q=[]
 heapq.heappush(q,(tmp,0))
 while q:
