@@ -38,8 +38,4 @@ res=-INF
 for i in range(2,N):
     if go[i]!=INF and back[i]!=INF:
         res=max(res,E*(h[i])-D*(go[i]+back[i]))
-<<<<<<< HEAD
 print(res if res!=-INF else 'Impossible')
-=======
-print(res if res!=-INF else 'Impossible')
->>>>>>> df72206bc96ff80a896fdac61a69eb93efda0c13
