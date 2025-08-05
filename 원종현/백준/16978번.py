@@ -47,9 +47,6 @@ for idx in range(M):
 k_q.sort(key=lambda x:x[0])
 build(0,N,1)
 
-print(tree)
-print(add_q)
-print(k_q)
 v=0
 for now in range(len(k_q)):
     k,i,j,idx=k_q[now]
