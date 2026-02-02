@@ -1,0 +1,5 @@
+N=int(input())
+li=list(map(int,input().split()))
+J=int(input())
+C=int(input())
+print(li[0]+(li[0]/sum(li))*C*J)
